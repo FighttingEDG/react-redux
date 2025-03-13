@@ -14,14 +14,17 @@ const counterStroe = createSlice({
         },
         decrement(state) {
             state.count--
+        },
+        addToNum(state, action) {
+            state.count = action.payload
         }
     }
 })
 
 // 解构出actionCreater函数
-const { increment, decrement } = counterStroe.actions
+const { increment, decrement, addToNum } = counterStroe.actions
 // 获取reducer
 const reducer = counterStroe.reducer
 
-export { increment, decrement };
+export { increment, decrement, addToNum };
 export default reducer;
